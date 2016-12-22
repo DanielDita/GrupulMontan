@@ -20,6 +20,14 @@ test:
   <<: *default
   database: db/test.sqlite3
 
+staging:
+  <<: *default
+  database: grupul_montan_staging
+  username: root
+  password: <%= ENV["DATABASE_PASSWORD"] %>
+
 production:
   <<: *default
-  database: db/production.sqlite3
+  database: grupul_montan_production
+  username: root
+  password: <%= ENV["DATABASE_PASSWORD"] %>
