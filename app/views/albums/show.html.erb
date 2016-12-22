@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag    'articles', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+    <script type="text/javascript" src="/fancybox/jquery.easing-1.4.pack.js"></script>
+    <script type="text/javascript" src="/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
+
+</head>
+<body>
+  <div class="home-wrap">
+
+  <div class="mobile-nav">
+
+  </div>
+  <header>
+    <div class="header-position"><a href="http://localhost:3001/index.html"><h1 class="logo">Grupul Montan</h1></a>
+      <nav class="site-nav">
+        <ul>
+          <hr>
+          <br>
+          <br>
+          <li><a href="http://localhost:3000/events"><i><- Inapoi la aventuri</i></a></li>
+        </ul></nav><div class="mobile-nav-toggle"></div></div></header>
+
+
+    <div class="home-sections">
+      <section class="blog3">
+      <div class="flex flex--center">
+
+          <div class="col-52">
+            <p id="notice"><%= notice %></p>
+
+            <p>
+              <strong>Title:</strong>
+              <%= @album.title %>
+            </p>
+
+            <% @album_attachments.each do |p| %>
+
+            <div id="myImg"><%= image_tag (p.avatar_url), data: { behavior: 'modal' }, :width => 300 %></div>
+
+
+            <%= link_to "Edit Attachment", edit_album_attachment_path(p) %>
+            <%= link_to 'Edit', edit_album_path(@album) %> |
+            <%= link_to 'Back', albums_path %>
+
+
+            <div id="myModal" class="modal">
+
+              <span class="close">×</span>
+              <div class="modal-content">
+                <%= image_tag (p.avatar_url), data: { behavior: 'modal' }, :width => 700 %></div>
+
+            </div>
+
+            <% end %>
+
+
+          </div>
+
+      </div>
+      </section>
+    </div>
+
+  </div>
+
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg');
+var modalImg = document.getElementsByClassName("modal-content");
+
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+</script>
+
+<body>

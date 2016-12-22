@@ -1,0 +1,407 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.home-wrap header .site-nav-home ul {
+  list-style: none;
+  margin-left: 30px;
+  padding: 50px 20px 0 0;
+  text-align: right;
+  font-family: Fira Sans; }
+.home-wrap header .site-nav-home li {
+  a {
+  text-decoration: none;
+  bottom: 30px;
+  color: inherit; }
+}
+  .home-wrap header .site-nav-home li:last-child {
+    margin-bottom: 0; }
+
+.about {
+  height: 635px;
+  background-image: image-url("about.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  .abouttext {
+    margin-top: 2%;
+    width: 800px;
+    font-weight: 300;
+  h1 {
+    color: white;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 26px;
+    text-align: justify;
+    line-height: 1;
+    margin-top: 420px;
+    font-family: Arial;
+    margin-left: 100px;
+  }}
+}
+.adventures {
+  height: 635px;
+  background-image: image-url("adventures.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  p1 {
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  text-align: left;
+  font-family: Fira Sans;
+  margin-right: -130px;
+  position: relative;
+  right: 140px;
+  top: 10px;
+}
+
+  p2 {
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+  justify-content: right;
+  line-height: 1,5;
+  position: relative;
+  left: 80px;
+  top: 216px;
+}
+.calendar-cta {
+  a {
+  color: #00cccc;
+  text-decoration: none;
+  
+ }
+  opacity: 0.7;
+  color: #5dabae;
+  font-family: Fira Sans;
+  width: 180px;
+  font-size: 24px;
+  display: block;
+  background: white;
+  text-align: center;
+  padding: 0.8em 0;
+  line-height: 0;
+  font-weight: bold;
+  position: relative;
+  left: 250px;
+  top: 240px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+  transition: all 0.15s ease-in-out;
+  &:hover {
+    box-shadow: 2px 8px 10px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+  }
+  }
+}
+
+.event-home {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  flex-flow: column;
+  flex-wrap: wrap;
+  margin-left: -40%;
+  margin-right: auto;
+  margin-top: -10px;
+
+  .event_title {
+    font-family: Fira Sans;
+    text-shadow: 1px 1px black;
+    width: 300px;
+    height: 120px;
+    position: relative;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    margin-bottom: 80px;
+    margin-right: 50px;
+    border-style: outset;
+    /* the below 3 lines are a fix for the flickering images when hovering over metadata */
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-perspective: 1000;
+    img {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+      max-width: 100%;
+      min-height: 100%;
+
+    }
+
+    }
+}
+.event_title:hover .event-meta {
+    opacity: 1;
+    -webkit-transform: translate(0%, 0%) scale(1);
+            transform: translate(0%, 0%) scale(1);
+
+
+ }
+.event-meta {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 5px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-transform: translate(0%, 100%) scale(0.5);
+          transform: translate(0%, 100%) scale(0.5);
+  transition: 200ms ease-in-out;
+  opacity: 1;
+ }
+
+  .event-meta .date {
+
+    font-style: normal;
+    padding-left: 3px;
+    text-align: left;
+    position: fixed;
+    bottom: -5px;
+    color: white;
+
+}
+  .event-meta .name {
+    a {
+    font-style: italic;
+    text-decoration: none;
+    color: white;
+    font-size: 22px;
+    display: block;
+    position: fixed;
+    width: 300px;
+    height: 150px;
+  }
+  text-align: center;
+
+  }
+
+.articles-home {
+  height: 460px;
+  background-image: image-url("articles.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  .bubble {
+
+    display: block;
+    position: relative;
+    top: 30px;
+    left: 30px;
+    width: 500px;
+    height: 45px;
+    margin-bottom: 30px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 3px;
+    border-radius: 15px 15px 15px 15px;
+    border: 3px solid black;
+    &:hover {
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
+      cursor: pointer; }
+
+    }
+
+
+  .name {
+    q {
+      color: white;
+      font-size: 16px;
+    }
+    a {
+      text-decoration: none;
+      font-size: 16px;
+      color: white;
+
+    }
+    overflow: hidden;
+    font-size: 28px;
+    padding-left: 10px;
+    text-align: left center;
+    font-family: Fira Sans;
+    font-style: italic;
+    font-weight: lighter;
+    line-height: 1.2;
+  }
+}
+.articles-cta {
+  a {
+    text-decoration: none;
+    color: black;
+    text-shadow: 3px #000;
+  }
+  opacity: 0.6;
+  font-style: italic;
+  font-family: Fira Sans;
+  font-size: 24px;
+  display: block;
+  background: white;
+  text-align: center;
+  padding: 0.8em 0.5em;
+  line-height: 0;
+  font-weight: bold;
+  position: relative;
+  left: 0px;
+  top: 400px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.4);
+  transition: all 0.15s ease-in-out;
+  &:hover {
+    box-shadow: 2px 8px 10px rgba(0,0,0,0.6);
+    cursor: pointer; }
+}
+
+.tips {
+  height: 460px;
+  background-image: image-url("tips.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  p3 {
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  text-align: left;
+  font-family: Fira Sans;
+  position: relative;
+  top: 20px;
+  left: -50px;
+}
+  .pinwelcome {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    flex-flow: row wrap;
+    flex-wrap: wrap;
+    margin-left: -10%;
+    margin-top: 90px;
+    .pinbox {
+      margin: 5px;
+      margin-right: 20px;
+      width: 150px;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
+      border-radius: 7px;
+      text-align: center;
+      background-color: #f2f2f2;
+      transition: all 0.15s ease-in-out;
+      &:hover {
+        box-shadow: 4px 10px 12px rgba(0,0,0,0.6);
+         }
+
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  h3 {
+    font-size: 22px;
+    margin: 0;
+    padding: 25px 10px;
+    overflow: auto;
+  a {
+    color: #474747;
+    text-decoration: none;
+  }
+}
+}
+}
+}
+
+.pins-cta {
+  a {
+    text-decoration: none;
+    color: black;
+    text-shadow: 3px #000;
+  }
+  opacity: 0.7;
+  font-family: Fira Sans;
+  font-size: 24px;
+  display: block;
+  background: white;
+  text-align: center;
+  padding: 0.8em 0.5em;
+  line-height: 0;
+  font-weight: bold;
+  position: relative;
+  max-width: 200px;
+  margin-left: -9%;
+  margin-top: 60px;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.4);
+  transition: all 0.15s ease-in-out;
+  &:hover {
+    box-shadow: 2px 8px 10px rgba(0,0,0,0.6);
+    cursor: pointer; }
+}
+.weather {
+  height: 920px;
+  background-image: image-url("weather.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  #awtd1460661630122 {
+    margin-top: 5px;
+    width: 1000px;
+    height: auto;
+    position: relative;
+    left: 20px;
+    top: 10px;
+  }
+  p4 {
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    text-align: left;
+    font-family: Fira Sans;
+    position: relative;
+    top: 5px;
+    left: 20px;
+  }
+}
+
+.footer {
+  height: 163px;
+  background-color: #443f3c;
+  p5 {
+    position: relative;
+    top: 70px;
+    color: white;
+  }
+}
+.tooltip {
+    position: relative;
+    display: block;
+
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 100px;
+    background-color: grey;
+    color: white;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    font-size: 11px;
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    top: -30px;
+    left: -5px;
+    z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+  @media (max-width: 1125px) {
+    .site-nav-home {
+      display: none;
+    }
+  }

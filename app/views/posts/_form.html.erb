@@ -1,0 +1,31 @@
+<%= form_for @post, html: { multipart: true } do |f| %>
+  <% if @post.errors.any? %>
+    <h2><%= pluralize(@post.errors.count, "error") %> Postarea nu s-a putut salva:</h2>
+    <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <%= f.label :image, "Ataseaza poza (Optional)" %><br>
+  <%= f.file_field :image %><br>
+  <br>
+
+  <%= f.label :title, "Titlul articolului (max 50 caractere)" %><br>
+  <%= f.text_field :title, :rows=>5, :maxlength => 50, required: true %>
+
+  <br>
+  <br>
+
+  <%= f.label :content, "Continutul articolului" %><br>
+  <%= f.text_area :content, :rows=>30, :cols=>85 %>
+
+  <br>
+  <br>
+
+
+
+  <%= f.submit "Salveaza si publica"%>
+
+<% end %>

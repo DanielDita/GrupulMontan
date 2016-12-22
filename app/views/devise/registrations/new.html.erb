@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="home-wrap">
+
+    <!--- <div class="mobile-nav"><ul><li><a href="https://localhost:4000"><i><- Inapoi</i></a></li></ul></div> -->
+    <header>
+      <div class="header-position"><a href="http://localhost:3001/index.html"><h1 class="logo">Grupul Montan</h1></a>
+      <nav class="site-nav">
+        <ul>
+
+          <hr>
+          <br>
+          <br>
+          <li><i><%= link_to "<- Pagina principala", welcome_index_path %></i></li>
+        </ul></nav></div></header>
+      <div class="home-sections">
+
+
+
+          <div class="articlearea">
+            <div class="authentif">
+          <div class="flex flex--center">
+            <div class="col-2">
+
+<h2>Creare cont nou</h2>
+
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+<div class="field">
+  <%= f.input :user_name, required: true %>
+</div>
+<br>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :parola %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :confirmare_parola %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <br>
+  <div class="actions">
+    <%= f.submit "Inregistrare" %>
+  </div>
+<% end %>

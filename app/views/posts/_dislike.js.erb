@@ -1,0 +1,3 @@
+$("#dislike_<%= @post.id %>").removeClass('entypo-heart-fill').addClass('entypo-heart-empty');
+
+$("#dislikes_<%= @post.id %>").html("<%= j (render partial: 'posts/dislikes', locals: { post: @post} ) %>");

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Articole</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag    'articles', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="home-wrap">
+
+    <div class="mobile-nav">
+      <ul>
+        <li>
+
+        </li>
+      </ul>
+    </div>
+    <header>
+      <div class="header-position">
+        <h1 class="logo">Grupul Montan</h1>
+        <nav class="site-nav">
+          <ul>
+            <li>
+              <button onclick="goBack()"> < Inapoi</button>
+            </li>
+          </ul>
+        </nav>
+        <div class="mobile-nav-toggle"></div>
+      </div>
+    </header>
+    <script>
+    function goBack() {
+    window.history.back();
+    }
+    </script>
+
+    <div class="home-sections">
+      <section class="blog22">
+        <div class="flex flex--center">
+          <div class="col-2">
+        <h1>Postare noua</h1>
+
+        <%= render 'form' %>
+      </div>
+    </div>
+    </div>
+</div>
+</body>
+</html>

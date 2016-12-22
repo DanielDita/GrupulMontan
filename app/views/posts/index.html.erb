@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Articole</title>
+    <link rel="stylesheet" href="../font-awesome-4.6.3/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="home-wrap">
+    <!--- <div class="mobile-nav"><ul><li><a href="https://localhost:4000"><i><- Inapoi</i></a></li></ul></div> -->
+    <header>
+      <div class="header-position">  <a href="../app/views/welcome/index.html.erb"><h1 class="logo">Grupul Montan</h1></a>
+      <nav class="site-nav">
+        <ul>
+          <li><% if user_signed_in? %>
+            <div class="tooltip">
+              <span class="tooltiptext">Vizualizeaza profil</span>
+              <%#<% if current_user.profileavatar.exists? %>
+              <%#<%= link_to image_tag(current_user.profileavatar.url(:medium)), profile_path(current_user.user_name) %>
+              <%#<% else %>
+              <%#<%= image_tag 'default-avatar.jpg'%>
+              <%#<% end %>
+              <%= link_to current_user.user_name + ' (' + current_user.roles.pluck(:name).join("") + ')',  profile_path(current_user.user_name) %>
+              <br>
+              <br>
+            </div>
+                <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+              <% end %></li>
+          <br>
+            <li><b><a href="../posts/new">Creaza articol</a></b></li>
+            <hr>
+            <br>
+            <br>
+            <li><i><a><%= link_to "<-Pagina principala", welcome_index_path %></a></i></li>
+          </ul>
+          </nav>
+          <div class="mobile-nav-toggle">
+          </div>
+        </div>
+      </header>
+
+
+      <div class="home-sections">
+        <section class="blog2">
+          <div class="articlearea">
+          <div class="flex flex--center">
+            <div class="col-1">
+              <br>
+              <div id="searcharticle">
+              <%= form_tag posts_path, :method => 'get' do %>
+              <%= text_field_tag :search, params[:search] %>
+              <%= submit_tag "Search" %>
+              <% end %>
+            </div>
+                <h2 id="page_title">Articole</h2>
+                  <div class="title_wrapper">
+                    <% @posts.each do |post| %>
+                    <h5 id="post_title"><a><%= link_to post.title, post %></a></h5>
+                    <%#<% if post.user.profileavatar.exists? %>
+                    <%#<%= link_to image_tag(post.user.profileavatar.url(:medium)) %>
+                    <%#<% else %>
+                    <%#<%= image_tag 'default-avatar.jpg'%>
+                    <%#<% end %>
+                    <p6><a><%= link_to post.user.user_name, profile_path(post.user.user_name) %></a></p6>
+                    <p class="date"><%= post.created_at.strftime("%b %d %Y") %></p>
+                    <hr>
+                    <br>
+                    <% end %>
+                  </div>
+              </div>
+          </div>
+        <br>
+          <%= yield %>
+          <div class=pagination>
+            <%= will_paginate @posts, :previous_label => '< Inapoi', :next_label => 'Continua >'  %>
+          </div>
+        </div>
+        </section>
+    </div>
+  </body>
+</html>

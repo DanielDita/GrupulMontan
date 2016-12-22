@@ -1,0 +1,36 @@
+// Place all the styles related to the profiles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#editbtn {
+  position: relative;
+  left: 250px;
+  a {
+    text-decoration: none;
+  }
+
+  color: #5dabae;
+  font-family: Fira Sans;
+
+  font-size: 12px;
+
+  font-weight: bold;
+
+}
+
+
+
+
+.img-circle{
+  position: relative;
+  left: 250px;
+}
+.user-name-and-follow{
+  position: relative;
+  max-width: 600px;
+  left: 250px;
+}
+.user-statistics {
+  position: relative;
+  font-weight: bold;
+  text-align: left;
+}

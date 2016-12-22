@@ -1,0 +1,21 @@
+<div class="posts-wrapper">
+  <div class="post">
+    <div class="post-body">
+      <div class="image-wrap">
+        <%= form_for @user, url: {action: "update"}, html: { multipart: true } do |f| %>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group.text-center">
+                <p> Schimba imaginea de profil:</p>
+                <div class="img-circle1">
+                  <%= profile_avatar_select(@user) %>
+                  <br>
+                <%= f.file_field :profileavatar, onChange: 'loadFile(event)' %>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group.text-center">
+                <p> Actualizeaza biografia:</p>
+                <%= f.text_area :bio, label: false, rows: 4 %>
+          <div class="form-group.text-center">
+            <%= f.submit "Actualizare", class: 'btn btn-success' %>
+            <% end %>

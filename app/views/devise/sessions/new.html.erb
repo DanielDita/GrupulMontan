@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="home-wrap">
+
+    <!--- <div class="mobile-nav"><ul><li><a href="https://localhost:4000"><i><- Inapoi</i></a></li></ul></div> -->
+    <header>
+      <div class="header-position"><a href="http://localhost:3001/index.html"><h1 class="logo">Grupul Montan</h1></a>
+      <nav class="site-nav">
+        <ul>
+
+          <hr>
+          <br>
+          <br>
+          <li><i><%= link_to "<- Pagina principala", welcome_index_path %></i></li>
+        </ul></nav></div></header>
+      <div class="home-sections">
+
+
+
+          <div class="articlearea">
+            <div class="authentif">
+          <div class="flex flex--center">
+            <div class="col-2">
+              <h3>Pentru a continua trebuie sa te autentifici</h3>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password, "Parola" %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+  <br>
+
+  <% if devise_mapping.rememberable? -%>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me, "Tine minte" %>
+    </div>
+  <% end -%>
+  <br>
+
+  <div class="actions">
+    <%= f.submit "Autentificare" %>
+  </div>
+<% end %>
+  <br>
+<%= render "devise/shared/links" %>
+<br>
+
+</div>
+</div>
+</div>
+</div>
+</section>
+
+</div>

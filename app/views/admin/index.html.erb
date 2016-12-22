@@ -1,0 +1,29 @@
+<h1>Users</h1>
+<table>
+  <thead>
+    <thead>
+      <tr>
+        <th>Created At</th><th>Last signed in</th><th>Email</th><th>Role</th><th>Username</th><th>SignIn Count</th>
+      </tr>
+    </thead>
+  </thead>
+  <tbody>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.created_at %></td>
+      <td><%= user.last_sign_in_at %></td>
+      <td><%= user.email %></td>
+      <td><%= user.roles.first %></td>
+      <td><%= user.user_name %></td>
+      <td><%= user.sign_in_count %></td>
+
+
+      <td>
+        <%= form_tag("/admin/" + user.id.to_s + "?role=regular", method: :PUT) do %>
+          <input type="submit" value="Make Regular"/>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

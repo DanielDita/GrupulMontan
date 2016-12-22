@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel="stylesheet" href="../font-awesome-4.6.3/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../app/assets/javascripts/smoothscroll.js"></script>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <script>
+    $(document).ready(function(){
+      $("li").ready(function(){
+      $("li").css({"color" : "grey", "font-weight" : "normal"})});
+    $("li").mouseenter(function(){
+        $( this ).css({"color" : "black", "font-weight" : "bold"});
+    });
+    $("li").mouseleave(function(){
+        $( this ).css({"color" : "grey", "font-weight" : "normal"});
+    });
+});
+
+
+</script>
+  </head>
+  <body>
+    <div class="home-wrap">
+    <!--- <div class="mobile-nav"><ul><li><a href="https://localhost:4000"><i><- Inapoi</i></a></li></ul></div> -->
+      <header>
+        <div class="header-position">
+          <a href="../app/views/welcome/index.html.erb"><h1 class="logo">Grupul Montan</h1></a>
+          <nav class="site-nav-home">
+            <ul>
+              <% if user_signed_in? %>
+
+                <li><div class="tooltip">
+                  <span class="tooltiptext">Vizualizeaza profil</span>
+                  <%= link_to current_user.user_name + ' (' + current_user.roles.pluck(:name).join("") + ')',  profile_path(current_user.user_name) %></div></li>
+                <br>
+                <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+                <% else %>
+                <li><%= link_to "Autentificare", new_user_session_path %></li>
+                <br>
+                <br>
+                <li><%= link_to "Cont nou", new_user_registration_path %></li>
+                <% end %>
+                <br>
+                <br>
+                <hr>
+                <br>
+                <li><a href="#about" class="smoothScroll"> Despre</a></li>
+                <br>
+                <br>
+                <li><a href="#adventures" class="smoothScroll"> Aventuri </a></li>
+                <br>
+                <br>
+                <li><a href="#articles" class="smoothScroll"> Articole</a></li>
+                <br>
+                <br>
+                <li><a href="#potecidemunte" class="smoothScroll"> Poteci de munte </a></li>
+                <br>
+                <br>
+                <li><a href="#weather" class="smoothScroll"> Vremea</a></li>
+                <br>
+                <br>
+                <li><a href="#contact" class="smoothScroll"> Contact</a></li>
+
+            <br>
+            <br>
+
+          </ul>
+
+          </nav>
+
+        </div>
+      </header>
+      <div class="home-sections">
+        <a name="about"></a>
+        <section class="about">
+          <div class="flex flex--center">
+            <div class="abouttext">
+              <h1> "Nicaieri in natura, nu exista atata varietate pe un spatiu atat de restrans ca in munte." - John Ruskin</h1>
+            </div>
+          </div>
+        </section>
+        <a name="adventures"></a>
+        <section class="adventures">
+          <div class="flex flex--center">
+            <div class="col-2">
+              <p1> Aventurile din acest an </p1>
+              <p2> Vezi mai multe</p2>
+              <div class="calendar-cta"><a><%= link_to 'Evenimente', events_path %></a></div>
+              <div class="event-home">
+              <% @events.each do |event| %>
+              <div class="event_title">
+                <%= link_to image_tag(event.image.url), event %>
+              <div class="event-meta">
+                <p class="name"><a><%= link_to event.title, event %></a></p>
+                <p class="date"><%= event.date %></p>
+              </div>
+              </div>
+            <% end %>
+            </div>
+            </div>
+          </div>
+        </section>
+        <a name="articles"></a>
+        <section class="articles-home">
+          <div class="flex flex--center">
+            <div class="col-2">
+
+              <% @posts.each do |post| %>
+              <div class="bubble">
+                <div class="name"><q><a><%= link_to post.title, post %></a></q></div>
+              </div>
+            <% end %>
+            </div>
+            <div class="col-2">
+
+                <div class="articles-cta"><a><%= link_to 'Toate articolele...', posts_path %></a></div>
+            </div>
+          </div>
+        </section>
+        <a name="potecidemunte"></a>
+        <section class="tips">
+          <div class="flex flex--center">
+            <div class="col-2">
+              <p3>Depozitul de trasee montane...</p3>
+              <div class="pinwelcome">
+
+              <% @pins.each do |pin| %>
+              <div class="pinbox">
+                <% if pin.image.file? %>
+                    <%= link_to image_tag(pin.image.url), pin %>
+                    <% else %>
+                    <%= image_tag 'traseu-default.jpg' %>
+                    <% end %>
+                    <h3><a><i><%= link_to pin.title, pin %></i></a></h3>
+              </div>
+              <% end %>
+            </div>
+            <div class="pins-cta"><a><%= link_to 'Mai multe', pins_path %></a></div>
+          </div>
+          </div>
+        </section>
+        <a name="weather"></a>
+        <section class="weather">
+          <div class="flex flex--center">
+            <div class="col-2">
+              <p4>Inainte de traseu...</p4>
+              <a href="http://www.accuweather.com/ro/ro/bucharest/287430/hiking-current-weather/287430" class="aw-widget-legal"></a><div id="awtd1460661630122" data-locationkey="" data-unit="c" data-language="ro" data-useip="true" data-uid="awtd1460661630122" data-editlocation="true" data-lifestyle="hiking" class="aw-widget-36hour"></div><script type="text/javascript" src="http://oap.accuweather.com/launch.js"></script>
+            </div>
+          </div>
+        </section>
+        <a name="contact"></a>
+        <section class="footer">
+          <div class="flex flex--center">
+            <div class="col-2">
+              <p5> Detalii de contact: <br><br> dita.daniel@gmail.com</p5>
+            </div>
+          </div>
+        </section>
+</div>
+</body>
+</html>

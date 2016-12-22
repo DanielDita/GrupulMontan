@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Aventuri</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="home-wrap">
+
+    <div class="mobile-nav">
+
+    </div>
+    <header>
+      <div class="header-position"><a href="../app/views/welcome/index.html.erb"><h1 class="logo">Grupul Montan</h1></a>
+        <nav class="site-nav">
+          <ul>
+            <li>
+              <button onclick="goBack()"> < Inapoi</button>
+            </li>
+          </ul>
+        </nav>
+        <div class="mobile-nav-toggle"></div>
+      </div>
+    </header>
+    <script>
+    function goBack() {
+    window.history.back();
+    }
+    </script>
+    <div class="home-sections">
+      <section class="blog1">
+        <div class="flex flex--center">
+          <div class="col-2">
+
+<h1>Editare event</h1>
+
+<%= render 'form' %>
+</div>
+</div>
+</div>
+
+</body>
+</html>

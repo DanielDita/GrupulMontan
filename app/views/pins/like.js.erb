@@ -1,0 +1,3 @@
+$("#like_<%= @pin.id %>").removeClass('entypo-heart-emtpy').addClass('entypo-heart-fill');
+
+$("#likes_<%= @pin.id %>").html("<%= j (render partial: 'pins/likes', locals: { pin: @pin} ) %>");

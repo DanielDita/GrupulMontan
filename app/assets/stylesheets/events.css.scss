@@ -1,0 +1,134 @@
+// Place all the styles related to the events controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.col-51 {
+  width: 80%;
+}
+
+.event {
+  width: 200%;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  flex-flow: row wrap;
+  flex-wrap: wrap;
+  margin-left: -40%;
+  margin-right: auto;
+
+  .event_title {
+    font-family: Fira Sans;
+    text-shadow: 1px 1px black;
+    width: 300px;
+    height: 120px;
+    position: relative;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    margin-bottom: 80px;
+    margin-right: 50px;
+    border-style: outset;
+    /* the below 3 lines are a fix for the flickering images when hovering over metadata */
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-perspective: 1000;
+    img {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+      max-width: 100%;
+      min-height: 100%;
+
+    }
+
+    }
+}
+.event_title:hover .event-meta {
+    opacity: 1;
+    -webkit-transform: translate(0%, 0%) scale(1);
+            transform: translate(0%, 0%) scale(1);
+
+
+ }
+.event-meta {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 5px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-transform: translate(0%, 100%) scale(0.5);
+          transform: translate(0%, 100%) scale(0.5);
+  transition: 200ms ease-in-out;
+  opacity: 1;
+ }
+
+  .event-meta .date {
+
+    font-style: normal;
+    padding-left: 3px;
+    text-align: left;
+    position: fixed;
+    bottom: -5px;
+    color: white;
+
+}
+  .event-meta .name {
+    a {
+    font-style: italic;
+    text-decoration: none;
+    color: white;
+    font-size: 22px;
+    display: block;
+    position: fixed;
+    width: 300px;
+    height: 150px;
+  }
+  text-align: center;
+
+  }
+
+.paginationevent {
+  margin-left: 5%;
+  text-align: center;
+  font-family: Fira Sans;
+  a {
+  color: black;
+  }
+  a, .previous_page, .current, .next_page {
+    padding: .75em 1em;
+    margin: 0 .5em;
+    border-radius: .15em;
+    line-height: 20px;
+    text-decoration: none;
+    background: white;
+    font-weight: bold;
+    font-size: .8em;
+    font-style: normal;
+    color: dark;}
+  .current {
+      background: #8bc6db;
+      color: white;
+    }
+  .disabled {
+      color: #C0C0C0;
+      &:hover {
+        color: #C0C0C0;
+        background: white;
+      }
+    }
+}
+#search {
+  position: relative;
+  margin-left: 23%;
+}
+
+  @media (max-width: 1250px) {
+    .event {
+      width: 150%;
+      margin-left: -7%;
+      margin-right: auto;
+    }
+  }

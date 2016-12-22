@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sfaturi&Utile</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag    'articles', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://weloveiconfonts.com/api/?family=entypo">
+  </head>
+  <body>
+    <div class="home-wrap">
+    <header>
+      <div class="header-position">
+        <a href="../app/views/welcome/index.html.erb"><h1 class="logo">Grupul Montan</h1></a>
+        <nav class="site-nav">
+          <ul>
+            <li><% if user_signed_in? %>
+              <div class="tooltip">
+                <span class="tooltiptext">Vizualizeaza profil</span>
+                <%#<% if current_user.profileavatar.exists? %>
+                <%#<%= link_to image_tag(current_user.profileavatar.url(:medium)), profile_path(current_user.user_name) %>
+                <%#<% else %>
+                <%#<%= image_tag 'default-avatar.jpg'%>
+                <%#<% end %>
+                <%= link_to current_user.user_name + ' (' + current_user.roles.pluck(:name).join("") + ')', profile_path(current_user.user_name) %>
+              </div>
+              <br>
+                  <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+                <% end %></li>
+            <hr>
+            <br>
+            <br>
+            <li><i><a><%= link_to "<-Inapoi", pins_path %></a></i></li>
+          </ul></nav><div class="mobile-nav-toggle"></div></div></header>
+      <div class="home-sections">
+        <section class="blog3">
+          <div class="flex flex--center">
+            <div class="col-2">
+              <br>
+        <p class="date"><%= @pin.created_at.strftime('%B %d %Y') %></p>
+        <h1 id="show_title"><%= @pin.title %></h1>
+        <br>
+        <p class="user">Postat de: <%= link_to @pin.user.user_name, profile_path(@pin.user.user_name) %></p>
+        <br>
+        <div class="views">
+        <%= "#{@pin.impressionist_count} vizualizari!" %>
+        </div>
+        <br>
+        <%= link_to '', like_pin_path(@pin.id), remote: true, id: "like_#{@pin.id}", class: "entypo-heart #{liked_pin @pin}" %>
+        Like
+
+        <br>
+        <br>
+        <div class="post-bottom">
+          <%= render 'pins/likes', pin: @pin %>
+        <hr>
+        <div id="pinimg">
+          <% if @pin.image.file? %>
+        <%= image_tag @pin.image.url(:medium), :width => 400 %>
+        <% else %>
+
+        <% end %>
+      </div>
+        <br>
+        <div id="description">
+          <%= markdown @pin.description %>
+
+        </div>
+    <br>
+    <br>
+
+    <%= link_to "Editare |", edit_pin_path(@pin) %>
+    <%= link_to "Sterge", pin_path, method: :delete, data: {confirm: "Sigur vrei sa stergi acest sfat?"} %>
+
+      <br>
+      <div id="disqus_thread"></div>
+      <script>
+          /**
+           *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+           *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+           */
+          /*
+          var disqus_config = function () {
+              this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+              this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+          };
+          */
+          (function() {  // DON'T EDIT BELOW THIS LINE
+              var d = document, s = d.createElement('script');
+
+              s.src = '//grupulmontan.disqus.com/embed.js';
+
+              s.setAttribute('data-timestamp', +new Date());
+              (d.head || d.body).appendChild(s);
+          })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+      </section>
+    </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+</body>
+</html>

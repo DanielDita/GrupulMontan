@@ -1,0 +1,195 @@
+/* line 4, D:/Project/Grupul Montan/GrupulMontan/blog/app/assets/stylesheets/articles.css.scss */
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+/* line 8, D:/Project/Grupul Montan/GrupulMontan/blog/app/assets/stylesheets/articles.css.scss */
+.hidden {
+  display: none;
+}
+
+/* line 12, D:/Project/Grupul Montan/GrupulMontan/blog/app/assets/stylesheets/articles.css.scss */
+.home-sections {
+  background-color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* line 19, D:/Project/Grupul Montan/GrupulMontan/blog/app/assets/stylesheets/articles.css.scss */
+.home-wrap header .logo {
+  overflow: hidden;
+  text-indent: 101%;
+  white-space: nowrap;
+  max-width: 135px;
+  background-image: url(/assets/logo-gm-0e8dd4b53bf2b6dcd5a45503a01837afaf12732d374904f1bf1f438f9ea74303.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 100px;
+  padding: 0;
+  margin: 0;
+}
+
+/* line 33, D:/Project/Grupul Montan/GrupulMontan/blog/app/assets/stylesheets/articles.css.scss */
+.pagination:before,
+.pagination:after {
+  content: " ";
+  display: table;
+}
+
+/* line 38, D:/Project/Grupul Montan/GrupulMontan/blog/app/assets/stylesheets/articles.css.scss */
+.pagination:after {
+  clear: both;
+}
+
+/* line 42, D:/Project/Grupul Montan/GrupulMontan/blog/app/assets/stylesheets/articles.css.scss */
+* {
+  box-sizing: border-box;
+}
+
+/* line 46, D:/Project/Grupul Montan/GrupulMontan/blog/app/assets/stylesheets/articles.css.scss */
+.pagination {
+  text-align: center;
+  font-family: Fira Sans;
+  margin: 0 0 3em 0;
+}
+/* line 50, D:/Project/Grupul Montan/GrupulMontan/blog/app/assets/stylesheets/articles.css.scss */
+.pagination a {
+  color: black;
+}
+/* line 53, D:/Project/Grupul Montan/GrupulMontan/blog/app/assets/stylesheets/articles.css.scss */
+.pagination a, .pagination .previous_page, .pagination .current, .pagination .next_page {
+  padding: .75em 1em;
+  margin: 0 .5em;
+  border-radius: .15em;
+  line-height: 20px;
+  text-decoration: none;
+  background: white;
+  font-weight: bold;
+  font-size: .8em;
+  font-style: normal;
+  color: dark;
+}
+/* line 64, D:/Project/Grupul Montan/GrupulMontan/blog/app/assets/stylesheets/articles.css.scss */
+.pagination .current {
+  background: #8bc6db;
+  color: white;
+}
+/* line 68, D:/Project/Grupul Montan/GrupulMontan/blog/app/assets/stylesheets/articles.css.scss */
+.pagination .disabled {
+  color: #C0C0C0;
+}
+/* line 70, D:/Project/Grupul Montan/GrupulMontan/blog/app/assets/stylesheets/articles.css.scss */
+.pagination .disabled:hover {
+  color: #C0C0C0;
+  background: white;
+}
+
+/* line 76, D:/Project/Grupul Montan/GrupulMontan/blog/app/assets/stylesheets/articles.css.scss */
+#page_title {
+  font-weight: 600;
+  font-family: Fira Sans;
+  letter-spacing: 3px;
+  text-shadow: 1px 1px;
+  text-align: center;
+  border-bottom: 1px solid;
+  font-size: 2.5rem;
+  padding: .5em 0;
+}
+
+/* line 88, D:/Project/Grupul Montan/GrupulMontan/blog/app/assets/stylesheets/articles.css.scss */
+#show_title {
+  font-family: Fira Sans;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 300;
+  width: 100%;
+  max-width: 760px;
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* line 107, D:/Project/Grupul Montan/GrupulMontan/blog/app/assets/stylesheets/articles.css.scss */
+#content {
+  font-family: Fira Sans;
+  font-weight: 300;
+  width: 100%;
+  max-width: 1000px;
+  font-size: 1rem;
+  text-align: justify;
+  text-indent: 50px;
+}
+
+/* line 117, D:/Project/Grupul Montan/GrupulMontan/blog/app/assets/stylesheets/articles.css.scss */
+#post_title {
+  font-family: Fira Sans;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 300;
+  width: 100%;
+  max-width: 760px;
+  font-size: 1.0rem;
+  text-align: center;
+  margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+/* line 131, D:/Project/Grupul Montan/GrupulMontan/blog/app/assets/stylesheets/articles.css.scss */
+#post_title a {
+  display: block;
+  color: black;
+}
+/* line 135, D:/Project/Grupul Montan/GrupulMontan/blog/app/assets/stylesheets/articles.css.scss */
+#post_title hr {
+  margin: 2em auto;
+}
+
+/* line 141, D:/Project/Grupul Montan/GrupulMontan/blog/app/assets/stylesheets/articles.css.scss */
+.title_wrapper {
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* line 147, D:/Project/Grupul Montan/GrupulMontan/blog/app/assets/stylesheets/articles.css.scss */
+.date {
+  font-size: .7rem;
+  text-align: center;
+}
+
+/* line 152, D:/Project/Grupul Montan/GrupulMontan/blog/app/assets/stylesheets/articles.css.scss */
+.site-nav a {
+  color: #000000;
+}
+
+/* line 156, D:/Project/Grupul Montan/GrupulMontan/blog/app/assets/stylesheets/articles.css.scss */
+#share_box {
+  text-align: center;
+}
+/* line 158, D:/Project/Grupul Montan/GrupulMontan/blog/app/assets/stylesheets/articles.css.scss */
+#share_box p {
+  padding: 0 0 1em 0;
+  margin: 0;
+  font-weight: 400;
+  color: black;
+}
+/* line 164, D:/Project/Grupul Montan/GrupulMontan/blog/app/assets/stylesheets/articles.css.scss */
+#share_box i {
+  color: black;
+  padding: 1em 1.5em;
+}
+/* line 167, D:/Project/Grupul Montan/GrupulMontan/blog/app/assets/stylesheets/articles.css.scss */
+#share_box i:hover {
+  cursor: pointer;
+}

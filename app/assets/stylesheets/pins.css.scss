@@ -1,0 +1,101 @@
+// Place all the styles related to the pins controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.col-50 {
+  width: 80%;
+}
+.blog3 {
+  height: 100%;
+  background-color: #f2f2f2;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#pinpage_title{
+  font-family: Fira-Sans;
+  font-weight: normal;
+  font-style: italic;
+  text-align: center;
+  font-size: 32px;
+}
+h4 {
+  font-family: Fira-Sans;
+  font-weight: normal;
+  font-style: italic;
+  text-align: center;
+  font-size: 14px;
+}
+
+
+
+
+  .pin {
+    width: 200%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    flex-flow: row wrap;
+    flex-wrap: wrap;
+    margin-left: -50%;
+    margin-right: auto;
+    .box {
+      margin: 5px;
+  	  width: 200px;
+      max-height: 500px;
+  	  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
+  	  border-radius: 7px;
+  	  text-align: center;
+
+
+
+      img {
+        max-width: 100%;
+	  	  height: auto;
+      }
+      h3 {
+	  	  font-size: 22px;
+	   	  margin: 0;
+	  	  padding: 25px 10px;
+        overflow: auto;
+      a {
+				color: #474747;
+        text-decoration: none;
+        word-wrap: break-word;
+	  	}
+
+	  }
+    .text {
+      text-align: left;
+      margin: 15px;
+      text-overflow: hidden;
+
+      a {
+      color: #474747;
+      text-decoration: none;
+    }
+    }
+}
+
+}
+
+#searchpin {
+  position: relative;
+  margin-left: 22%;
+}
+#description {
+  font-family: Fira Sans;
+  font-weight: 300;
+  width: 100%;
+  max-width: 800px;
+  font-size: 1rem;
+  text-align: left;
+  word-wrap: break-word;
+}
+#pinimg {
+  margin-left: 25%;
+}
+@media (max-width: 1270px) {
+  .pin {
+    width: 150%;
+    margin-left: auto;
+  }
+}

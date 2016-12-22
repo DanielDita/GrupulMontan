@@ -1,0 +1,38 @@
+<%= form_for @event, html: { multipart: true } do |f| %>
+  <% if @event.errors.any? %>
+    <h2><%= pluralize(@event.errors.count, "error") %> evenimentul nu s-a putut salva:</h2>
+    <ul>
+      <% @event.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <input type=image name=images_array multiple />
+  <% end %>
+
+  <%= f.label :image, "Ataseaza poza evenimentului (Cover)" %><br>
+  <%= f.file_field :image, required: true %><br>
+  <br>
+
+  <%= f.label :title, "Titlul evenimentului" %><br>
+  <%= f.text_field :title, :rows=>5, :maxlength => 50, required: true %>
+
+  <br>
+  <br>
+
+  <%= f.label :date %><br />
+  <%= f.date_select :date, :start_year=>2000 %>
+
+  <br>
+  <br>
+
+  <%= f.label :description, "Descrierea evenimentului" %><br>
+  <%= f.text_area :description, :rows=>20, :cols=>85 %>
+
+  <br>
+
+  <br>
+  <br>
+
+  <%= f.submit "Salveaza si publica"%>
+
+<% end %>

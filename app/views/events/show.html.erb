@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Aventuri</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag    'articles', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://weloveiconfonts.com/api/?family=entypo">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+    <script type="text/javascript" src="/fancybox/jquery.easing-1.4.pack.js"></script>
+    <script type="text/javascript" src="/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
+
+  </head>
+  <body>
+    <div class="home-wrap">
+
+    <div class="mobile-nav">
+
+    </div>
+    <header>
+      <div class="header-position">  <a href="../app/views/welcome/index.html.erb"><h1 class="logo">Grupul Montan</h1></a>
+        <nav class="site-nav">
+          <ul>
+            <li><% if user_signed_in? %>
+              <div class="tooltip">
+                <span class="tooltiptext">Vizualizeaza profil</span>
+                <%#<% if current_user.profileavatar.exists? %>
+                <%#<%= link_to image_tag(current_user.profileavatar.url(:medium)), profile_path(current_user.user_name) %>
+                <%#<% else %>
+                <%#<%= image_tag 'default-avatar.jpg'%>
+                <%#<% end %>
+                <%= link_to current_user.user_name + ' (' + current_user.roles.pluck(:name).join("") + ')',  profile_path(current_user.user_name) %>
+                <br>
+                <br>
+                <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+              <% end %></li>
+            <hr>
+            <br>
+            <br>
+            <li><a href="http://localhost:3000/events"><i><- Inapoi la aventuri</i></a></li>
+          </ul></nav><div class="mobile-nav-toggle"></div></div></header>
+
+
+      <div class="home-sections">
+        <section class="blog11">
+        <div class="flex flex--center">
+
+            <div class="col-2">
+              <br>
+        <p class="date">Data evenimentului:<br><%= @event.date %></p>
+        <h1 id="show_title"><%= @event.title %></h1>
+        <br>
+        <p class="user">Postat de: <%= link_to @event.user.user_name, profile_path(@event.user.user_name) %></p>
+        <br>
+        <div class="views">
+        <%= "#{@event.impressionist_count} vizualizari!" %>
+        </div>
+        <br>
+        <%= link_to '', like_event_path(@event.id), remote: true, id: "like_#{@event.id}", class: "entypo-heart #{liked_event @event}" %>
+        Like
+
+        <br>
+        <br>
+        <div class="post-bottom">
+          <%= render 'events/likes', event: @event %>
+
+        </div>
+        <hr>
+        <div id="myImg">
+
+          <%= image_tag @event.image.url, data: { behavior: 'modal' }, :width => 400 %>
+          
+        </div>
+        <br>
+
+        <div id="description">
+          <%= markdown @event.description %>
+
+        </div>
+    <br>
+    <br>
+    <div id="options">
+    <a><%= link_to "Editare |", edit_event_path(@event) %></a>
+    <a><%= link_to "Sterge", event_path(@event), method: :delete, data: {confirm: "Sigur vrei sa stergi aceasta eventare?"} %></a>
+
+  </div>
+      <%#<%= link_to 'New Album', new_album_path %>
+      <hr>
+      <%#<%= link_to 'Album', album_path %>
+
+      <br>
+      <div id="disqus_thread"></div>
+      <script>
+          /**
+           *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+           *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+           */
+          /*
+          var disqus_config = function () {
+              this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+              this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+          };
+          */
+          (function() {  // DON'T EDIT BELOW THIS LINE
+              var d = document, s = d.createElement('script');
+
+              s.src = '//grupulmontan.disqus.com/embed.js';
+
+              s.setAttribute('data-timestamp', +new Date());
+              (d.head || d.body).appendChild(s);
+          })();
+
+          $(function() {
+            $('#myImg').click(function(){
+              $('#myModal').show();
+              return false;
+            });
+
+            $('.close').click(function(){
+              $('#myModal').hide();
+            });
+          });
+
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+      </section>
+
+      <div id="myModal" class="modal">
+
+        <span class="close">×</span>
+        <div class="modal-content">
+          <%= image_tag @event.image.url, data: { behavior: 'modal' }, :width => 800 %>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+
+      </div>
+
+</div>
+
+</body>
+</html>
