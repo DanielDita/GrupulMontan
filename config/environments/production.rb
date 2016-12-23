@@ -77,13 +77,5 @@ config.assets.precompile = ['*.js', '*.css', '*.css.erb']
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  ActionMailer::Base.smtp_settings = {
-    address:  'smtp.sendgrid.net',
-    domain:   'grupulmontan.ro'
-    user_name: ENV["EMAILUSERNAME"],
-    password:   ENV["EMAILPASSWORD"],
-    port: 587,
-    authentication: :plain,
-    enable_starttls_auto: true
-  }
+  
 end
