@@ -77,5 +77,9 @@ config.assets.precompile = ['*.js', '*.css', '*.css.erb']
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  
+  Rails.application.configure do
+    ...
+    config.secret_key_base = ENV["SECRET_KEY_BASE"]
+    ...
+end
 end
