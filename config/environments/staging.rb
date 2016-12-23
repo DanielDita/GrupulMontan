@@ -87,7 +87,7 @@ config.assets.precompile = ['*.js', '*.css', '*.css.erb']
     enable_starttls_auto: true
   }
 
-config.middleware.insert_before(::Rack::Runtime, "::Rack::Auth::Basic", "Staging") do |u, p|
-  u == ENV["STAGING_USERNAME"] && p == ENV["STAGING_PASSWORD"]
-end
+  config.middleware.insert_before(::Rack::Runtime, "::Rack::Auth::Basic", "Staging") do |u, p|
+    u == ENV["STAGING_USERNAME"] && p == ENV["STAGING_PASSWORD"]
+  end
 end

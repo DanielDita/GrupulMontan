@@ -22,7 +22,7 @@
 # role :db,  %w{deploy@example.com}
 role :app, %w{deploy@139.59.131.87}
 role :web, %w{deploy@139.59.131.87}
-role :db, %w{deploy@139.59.131.87}, primary => true
+role :db, %w{deploy@139.59.131.87}, :primary => true
 set :branch, "production"
 set :rails_env, "production"
 set :deploy_to, "/var/www/grupul_montan_production"

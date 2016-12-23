@@ -23,11 +23,11 @@ test:
 staging:
   <<: *default
   database: grupul_montan_staging
-  username: root
+  username: deploy
   password: <%= ENV["DATABASE_PASSWORD"] %>
 
 production:
   <<: *default
   database: grupul_montan_production
-  username: root
+  username: deploy
   password: <%= ENV["DATABASE_PASSWORD"] %>

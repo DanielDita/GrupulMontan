@@ -4,9 +4,15 @@ lock "3.7.1"
 set :application, "grupul_montan"
 set :repo_url, "git@github.com:DanielDita/GrupulMontan.git"
 
-set :user, "root"
+set :user, "deploy"
 set :stages, %w(production staging)
 
+set :ssh_options, {
+  user: 'deploy',
+ keys: %w["~/.ssh/id_rsa"],
+  forward_agent: true,
+  auth_methods: %w["publickey"]
+}
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
