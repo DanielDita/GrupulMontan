@@ -13,6 +13,7 @@ class AdminController < ApplicationController
     user.remove_role user.roles.first # user only has one role
     new_role = Role.find_by_name(params[:role])
     user.add_role :regular
+    user.remove_role :visitor
     redirect_to '/admin'
   end
 
