@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="../font-awesome-4.6.3/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    
+
     <script type="text/javascript" src="//oap.accuweather.com/launch.js"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -24,8 +24,8 @@
 </script>
 <script>
 $(function() {
-  $('a[href*="#"]:not([href="#"])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+  $('a[href*="#"]').click(function() {
+
       var target = $(this.hash);
       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
       if (target.length) {
@@ -34,7 +34,7 @@ $(function() {
         }, 1000);
         return false;
       }
-    }
+
   });
 });
   </script>
