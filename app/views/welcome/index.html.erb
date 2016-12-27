@@ -35,9 +35,8 @@
             <ul>
               <% if user_signed_in? %>
 
-                <li><div class="tooltip">
-                  <span class="tooltiptext">Vizualizeaza profil</span>
-                  <%= link_to current_user.user_name + ' (' + current_user.roles.pluck(:name).join("") + ')',  profile_path(current_user.user_name) %></div></li>
+                <li>
+                  <%= link_to current_user.user_name + ' (' + current_user.roles.pluck(:name).join("") + ')',  profile_path(current_user.user_name) %></li>
                 <br>
                 <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
                 <% else %>
