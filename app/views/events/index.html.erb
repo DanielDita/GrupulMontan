@@ -15,8 +15,7 @@
       <nav class="site-nav">
         <ul>
           <li><% if user_signed_in? %>
-            <div class="tooltip">
-              <span class="tooltiptext">Vizualizeaza profil</span>
+            
               <%#<% if current_user.profileavatar.exists? %>
               <%#<%= link_to image_tag(current_user.profileavatar.url(:medium)), profile_path(current_user.user_name) %>
               <%#<% else %>
@@ -25,7 +24,7 @@
               <%= link_to current_user.user_name + ' (' + current_user.roles.pluck(:name).join("") + ')',  profile_path(current_user.user_name) %>
               <br>
               <br>
-            </div>
+
                 <%= link_to "Log out", destroy_user_session_path, method: :delete %>
               <% end %></li>
           <br>

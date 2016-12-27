@@ -22,12 +22,11 @@
 
     </div>
     <header>
-      <div class="header-position">  <a href="../app/views/welcome/index.html.erb"><h1 class="logo">Grupul Montan</h1></a>
+      <div class="header-position">  <a href="../app/views/welcome/index.html.erb"><h1 class="logo">Grupul Montan</h1></a></div>
         <nav class="site-nav">
           <ul>
             <li><% if user_signed_in? %>
-              <div class="tooltip">
-                <span class="tooltiptext">Vizualizeaza profil</span>
+
                 <%#<% if current_user.profileavatar.exists? %>
                 <%#<%= link_to image_tag(current_user.profileavatar.url(:medium)), profile_path(current_user.user_name) %>
                 <%#<% else %>
@@ -42,7 +41,7 @@
             <br>
             <br>
             <li><a href="http://localhost:3000/events"><i><- Inapoi la aventuri</i></a></li>
-          </ul></nav><div class="mobile-nav-toggle"></div></div></header>
+          </ul></nav><div class="mobile-nav-toggle"></div></header>
 
 
       <div class="home-sections">
@@ -73,7 +72,7 @@
         <div id="myImg">
 
           <%= image_tag @event.image.url, data: { behavior: 'modal' }, :width => 400 %>
-          
+
         </div>
         <br>
 

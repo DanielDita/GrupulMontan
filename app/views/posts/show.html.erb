@@ -30,8 +30,7 @@
         <nav class="site-nav">
           <ul>
             <li><% if user_signed_in? %>
-              <div class="tooltip">
-                <span class="tooltiptext">Vizualizeaza profil</span><%= link_to current_user.user_name + ' (' + current_user.roles.pluck(:name).join("") + ')',  profile_path(current_user.user_name) %></div>
+              <%= link_to current_user.user_name + ' (' + current_user.roles.pluck(:name).join("") + ')',  profile_path(current_user.user_name) %>
               <br>
               <%= link_to "Log out", destroy_user_session_path, method: :delete %>
               <% else %>
@@ -50,7 +49,7 @@
       <div class="home-sections">
         <section class="blog22">
         <div class="flex flex--center">
-            <div class="col-2">              
+            <div class="col-2">
               <p class="date"><%= @post.created_at.strftime('%B %d %Y') %></p>
               <h1 id="show_title"><%= @post.title %></h1>
               <%# <% if @post.user.profileavatar.exists? %>
