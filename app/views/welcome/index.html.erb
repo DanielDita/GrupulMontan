@@ -21,23 +21,27 @@
         $( this ).css({"color" : "grey", "font-weight" : "normal"});
     });
 });
-
-$(function() {
-  smoothScrool(1000);
-});
-function smoothScrool (duration) {
-  $('a[href^="#"]').on('click', function(event) {
-    var target = $( $(this).attr('href') );
-    if(target.length) {
-      event.preventDefault();
-      $('html, body').animate({
-        scrollTop: target.offset().top
-      }, duration);
-    }
-  });
-}
-
 </script>
+<script>
+  $(function() {
+	smoothScroll(300);
+  });
+
+  function smoothScroll (duration) {
+	$('a[href^="#"]').on('click', function(event) {
+
+	    var target = $( $(this).attr('href') );
+
+	    if( target.length ) {
+	        event.preventDefault();
+	        $('html, body').animate({
+	            scrollTop: target.offset().top
+	        }, duration);
+	    }
+	});
+}
+  </script>
+
   </head>
   <body>
     <div class="home-wrap">
