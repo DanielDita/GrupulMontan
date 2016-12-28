@@ -17,7 +17,7 @@
         <nav class="site-nav">
           <ul>
             <li><% if user_signed_in? %>
-              
+
                 <%#<% if current_user.profileavatar.exists? %>
                 <%#<%= link_to image_tag(current_user.profileavatar.url(:medium)), profile_path(current_user.user_name) %>
                 <%#<% else %>
@@ -71,7 +71,7 @@
     <br>
 
     <%= link_to "Editare |", edit_pin_path(@pin) %>
-    <%= link_to "Sterge", pin_path, method: :delete, data: {confirm: "Sigur vrei sa stergi acest sfat?"} %>
+    <%= link_to "Sterge", pin_path, method: :destroy, data: {confirm: "Sigur vrei sa stergi acest traseu?"} %>
 
       <br>
       <div id="disqus_thread"></div>
