@@ -8,6 +8,7 @@
     <%= csrf_meta_tags %>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="http://weloveiconfonts.com/api/?family=entypo">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
     <script type="text/javascript" src="/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
     <script type="text/javascript" src="/fancybox/jquery.easing-1.4.pack.js"></script>
@@ -17,10 +18,6 @@
   </head>
   <body>
     <div class="home-wrap">
-
-    <div class="mobile-nav">
-
-    </div>
     <header>
       <div class="header-position">
         <a href="../app/views/welcome/index.html.erb"><h1 class="logo">Grupul Montan</h1></a>
@@ -41,16 +38,13 @@
             <hr>
             <br>
             <br>
-            <li><a href="http://localhost:3000/events"><i><- Inapoi la aventuri</i></a></li>
+            <li><i><a><%= link_to "<- Inapoi la evenimente", events_path %></a></i></li>
           </ul></nav><div class="mobile-nav-toggle"></div></div></header>
-
-
       <div class="home-sections">
         <section class="blog11">
         <div class="flex flex--center">
-
             <div class="col-2">
-              <br>
+              <div class="w3-container w3-white">
         <p class="date">Data evenimentului:<br><%= @event.date %></p>
         <h1 id="show_title"><%= @event.title %></h1>
         <br>
@@ -77,7 +71,7 @@
         </div>
         <br>
 
-        <div id="description">
+        <div id="content">
           <%= markdown @event.description %>
 
         </div>
@@ -127,7 +121,12 @@
 
       </script>
       <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-      </section>
+    </div>
+  </div>
+</div>
+</section>
+</div>
+
 
       <div id="myModal" class="modal">
 
@@ -137,14 +136,8 @@
 
       </div>
     </div>
-  </div>
-</div>
+
 
   </div>
-
-      </div>
-
-</div>
-
 </body>
 </html>

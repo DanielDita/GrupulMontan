@@ -2,11 +2,13 @@
 <html>
   <head>
     <title>Articole</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="http://weloveiconfonts.com/api/?family=entypo">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script>
     //Modal
@@ -50,6 +52,7 @@
         <section class="blog22">
         <div class="flex flex--center">
             <div class="col-2">
+              <div class="w3-container w3-white">
               <p class="date"><%= @post.created_at.strftime('%B %d %Y') %></p>
               <h1 id="show_title"><%= @post.title %></h1>
               <%# <% if @post.user.profileavatar.exists? %>
@@ -124,6 +127,7 @@
 
         </script>
         <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+      </div>
   </div>
   </div>
     </div>
@@ -135,12 +139,5 @@
     </div>
   </div>
     </div>
-    <hr>
-      <br>
-
-
-
-  </div>
-
 </body>
 </html>

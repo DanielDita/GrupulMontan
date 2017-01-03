@@ -8,6 +8,7 @@
     <%= csrf_meta_tags %>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="http://weloveiconfonts.com/api/?family=entypo">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
   </head>
   <body>
     <div class="home-wrap">
@@ -38,6 +39,7 @@
           <div class="flex flex--center">
             <div class="col-2">
               <br>
+                <div class="w3-container w3-white">
         <p class="date"><%= @pin.created_at.strftime('%B %d %Y') %></p>
         <h1 id="show_title"><%= @pin.title %></h1>
         <br>
@@ -63,7 +65,7 @@
         <% end %>
       </div>
         <br>
-        <div id="description">
+        <div id="content">
           <%= markdown @pin.description %>
 
         </div>
@@ -71,7 +73,7 @@
     <br>
 
     <%= link_to "Editare |", edit_pin_path(@pin) %>
-    <%= link_to "Sterge", pin_path, method: :destroy, data: {confirm: "Sigur vrei sa stergi acest traseu?"} %>
+    <%= link_to "Sterge", pin_path, method: :delete, data: {confirm: "Sigur vrei sa stergi acest traseu?"} %>
 
       <br>
       <div id="disqus_thread"></div>
@@ -97,6 +99,7 @@
       </script>
       <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
       </section>
+    </div>
     </div>
     </div>
   </div>
