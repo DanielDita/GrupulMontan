@@ -39,7 +39,7 @@
                 <li>
                   <%= link_to current_user.user_name + ' (' + current_user.roles.pluck(:name).join("") + ')',  profile_path(current_user.user_name) %></li>
                 <br>
-                <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+                <li><%= link_to "Log out", destroy_user_session_path, :method => :delete %></li>
                 <% else %>
                 <li><%= link_to "Autentificare", new_user_session_path %></li>
                 <br>
