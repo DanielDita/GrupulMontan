@@ -7,7 +7,6 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="http://weloveiconfonts.com/api/?family=entypo">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script>
     //Modal
@@ -52,6 +51,7 @@
         <div class="flex flex--center">
             <div class="col-2">
               <div class="w3-container w3-white">
+                <br>
               <p class="date"><%= @post.created_at.strftime('%B %d %Y') %></p>
               <h1 id="show_title"><%= @post.title %></h1>
               <%# <% if @post.user.profileavatar.exists? %>
