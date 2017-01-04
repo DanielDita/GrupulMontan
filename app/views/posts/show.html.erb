@@ -65,8 +65,8 @@
                 <%= "#{@post.impressionist_count} vizualizari!" %>
               </div>
               <br>
-              <%= link_to '', like_post_path(@post.id), remote: true, id: "like_#{@post.id}", class: "entypo-heart #{liked_post @post}", "Like" %>
-
+              <%= link_to '', like_post_path(@post.id), remote: true, id: "like_#{@post.id}", class: "entypo-heart #{liked_post @post}" %>
+              Like
 
               <br>
               <br>
