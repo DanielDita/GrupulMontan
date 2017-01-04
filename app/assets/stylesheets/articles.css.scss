@@ -329,19 +329,17 @@ body {
   }
 }
 
-.entypo-heart {
-  width: 24px;
-  height: 24px;
-}
-
 .entypo-heart-emtpy:before {
   font-family: 'entypo', sans-serif;
   color: grey;
-
+  width: 24px;
+  height: 24px;
 }
 .entypo-heart-fill {
   font-family: 'entypo', sans-serif;
   color: red;
+  width: 24px;
+  height: 24px;
 }
 #options {
   a {
