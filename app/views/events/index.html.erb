@@ -15,7 +15,7 @@
       <nav class="site-nav">
         <ul>
           <li><% if user_signed_in? %>
-            
+
               <%#<% if current_user.profileavatar.exists? %>
               <%#<%= link_to image_tag(current_user.profileavatar.url(:medium)), profile_path(current_user.user_name) %>
               <%#<% else %>
@@ -32,7 +32,7 @@
           <hr>
           <br>
           <br>
-          <li><i><a><%= link_to "Pagina principala", welcome_index_path %></a></i></li>
+          <li><i><a><%= link_to "<-Pagina principala", welcome_index_path %></a></i></li>
         </ul></nav><div class="mobile-nav-toggle"></div></div>
 
       </header>
