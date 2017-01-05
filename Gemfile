@@ -32,6 +32,7 @@ gem 'mail_form', '~> 1.5', '>= 1.5.1'
 
 gem 'paperclip', '~> 4.3.7'
 gem 'aws-sdk', '~> 2.3'
+gem 'aws-sdk-v1'
 gem 'fog'
 gem "figaro"
 
