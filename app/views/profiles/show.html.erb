@@ -28,8 +28,8 @@
       </header>
 
 <div class="posts-wrapper">
-
-
+  <section class="blog4">
+<div class="col-1">
         <br>
         <%= profile_avatar_select(@user) %>
         <br>
@@ -56,6 +56,7 @@
         </div>
         <% @posts.each do |post| %>
 <ul><li><h5 id="post_title"><a><%= link_to post.title, post %></a></h5></li></ul>
-
+</div>
+</section>
 </div>
 <% end %>
