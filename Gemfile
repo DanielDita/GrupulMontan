@@ -31,6 +31,7 @@ gem 'font-awesome-rails', '~> 4.5'
 gem 'mail_form', '~> 1.5', '>= 1.5.1'
 
 gem 'paperclip', '~> 4.3.7'
+gem 'aws-sdk', '~> 2.3'
 
 gem 'nested_form', '~> 0.3.2'
 gem 'dropzonejs-rails'
