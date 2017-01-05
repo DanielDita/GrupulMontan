@@ -28,13 +28,12 @@
       </header>
 
 <div class="posts-wrapper">
-  <div class="row.profile-header">
-    <div class="col-md-6">
+
 
         <br>
         <%= profile_avatar_select(@user) %>
         <br>
-      
+
         <span id="editbtn">
 <% if @user == current_user %>
   <a><%= link_to 'Editeaza profil', edit_profile_path(@user.user_name), class: 'btn edit-button' %></a></span>
@@ -44,16 +43,19 @@
         <h3>Munțoman: <%= @user.user_name %></h3>
       </div>
 
+<div class="biografie">
 <h3>Biografie:</h3>
         <%= @user.bio %>
         <hr>
         <br>
-        <div class="col-md-7">
+      </div>
+
       <div class="user-statistics">
         <p>Articolele munțomanului:<br>
           <%= pluralize @user.posts.count, 'post' %> </p>
         </div>
-          <div id="profileposts"><% @posts.each do |post| %></div>
-<ul><h5 id="post_title"><a><%= link_to post.title, post %></a></h5></ul>
+        <% @posts.each do |post| %>
+<ul><li><h5 id="post_title"><a><%= link_to post.title, post %></a></h5></li></ul>
+
 </div>
 <% end %>

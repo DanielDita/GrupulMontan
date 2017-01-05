@@ -26,11 +26,23 @@
 }
 .user-name-and-follow{
   position: relative;
-  max-width: 600px;
   left: 250px;
+  h3 {
+    text-decoration: underline;
+  }
+}
+.biografie{
+  position: relative;
+  left: 250px;
+  h3 {
+    text-decoration: underline;
+  }
 }
 .user-statistics {
   position: relative;
   font-weight: bold;
-  text-align: left;
+  left: 250px;
+  p {
+    text-decoration: underline;
+  }
 }
