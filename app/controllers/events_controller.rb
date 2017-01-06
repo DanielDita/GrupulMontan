@@ -7,7 +7,7 @@ class EventsController < ApplicationController
 
 
   def index
-    @events = Event.where(["title LIKE ?","%#{params[:search]}%"]).all.order("created_at desc").paginate(page: params[:page], per_page: 9)
+    @events = Event.where(["title LIKE ?","%#{params[:search]}%"]).all.order("created_at asc").paginate(page: params[:page], per_page: 9)
   end
 
   def new
