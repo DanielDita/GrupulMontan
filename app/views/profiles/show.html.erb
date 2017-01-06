@@ -55,9 +55,9 @@
       <div class="user-statistics">
         <p>Articolele munțomanului:<br>
           <%= pluralize @user.posts.count, 'post' %> </p>
-        </div>
+
         <% @posts.each do |post| %>
-<ul><li><h5 id="post_title"><a><%= link_to post.title, post %></a></h5></li></ul>
+<ul><li><h5 id="post_title"><a><%= link_to post.title, post %></a></h5></li></ul></div>
 </div>
 </div>
 </section>
