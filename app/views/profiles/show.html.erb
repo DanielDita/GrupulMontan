@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Articole</title>
+    <title>Profile</title>
+    <meta name="viewport" content="width=1132, initial-scale=1.0">
     <link rel="stylesheet" href="../font-awesome-4.6.3/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -27,8 +28,9 @@
         </div>
       </header>
 
-<div class="posts-wrapper">
+<div class="home-sections">
   <section class="blog4">
+    <div class="flex flex--center">
 <div class="col-1">
         <br>
         <%= profile_avatar_select(@user) %>
@@ -56,6 +58,7 @@
         </div>
         <% @posts.each do |post| %>
 <ul><li><h5 id="post_title"><a><%= link_to post.title, post %></a></h5></li></ul>
+</div>
 </div>
 </section>
 </div>

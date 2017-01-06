@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #editbtn {
   position: relative;
-  left: 250px;
+
   a {
     text-decoration: none;
   }
@@ -25,20 +25,17 @@
      }
 
 
-.img-circle{
-  position: relative;
-  left: 250px;
-}
+
 .user-name-and-follow{
   position: relative;
-  left: 250px;
+
   h3 {
     text-decoration: underline;
   }
 }
 .biografie{
   position: relative;
-  left: 250px;
+  overflow: auto;
   h3 {
     text-decoration: underline;
   }
@@ -46,7 +43,7 @@
 .user-statistics {
   position: relative;
   font-weight: bold;
-  left: 250px;
+
   p {
     text-decoration: underline;
   }

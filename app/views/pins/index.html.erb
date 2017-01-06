@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Sfaturi&Utile</title>
+    <title>Pins</title>
+    <meta name="viewport" content="width=1024, initial-scale=1.0">
     <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -17,7 +18,7 @@
       <nav class="site-nav">
         <ul>
           <li><% if user_signed_in? %>
-            
+
               <%#<% if current_user.profileavatar.exists? %>
               <%#<%= link_to image_tag(current_user.profileavatar.url(:medium)), profile_path(current_user.user_name) %>
               <%#<% else %>

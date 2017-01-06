@@ -367,6 +367,7 @@
   height: 163px;
   background-color: #443f3c;
   p5 {
+    font-family: Fira Sans;
     position: relative;
     top: 70px;
     color: white;
@@ -400,8 +401,11 @@
 .tooltip:hover .tooltiptext {
     visibility: visible;
 }
-  @media (max-width: 1125px) {
-    .site-nav-home {
-      display: none;
-    }
+
+@media (max-height: 770px) {
+  .home-wrap header .site-nav-home li {
+    margin-bottom: -5px;
+    margin-top: -20px;
   }
+
+}
