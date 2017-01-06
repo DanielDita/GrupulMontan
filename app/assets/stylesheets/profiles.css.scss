@@ -41,9 +41,15 @@
   }
 }
 .user-statistics {
-  position: relative;
+  text-align: center;
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
   font-weight: bold;
-
+  h5 {
+    font-family: Fira Sans;
+    font-size: 14px;
+  }
   p {
     text-decoration: underline;
   }
