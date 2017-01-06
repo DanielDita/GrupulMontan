@@ -29,11 +29,7 @@
       </header>
 
 <div class="home-sections">
-  <section class="blog4">
-    <div class="articlearea">
-    <div class="flex flex--center">
-      <div class="col-1">
-        <br>
+
         <%= profile_avatar_select(@user) %>
         <br>
         <span id="editbtn">
@@ -41,31 +37,26 @@
   <a><%= link_to 'Editeaza profil', edit_profile_path(@user.user_name), class: 'btn edit-button' %></a></span>
 <% end %>
 
-      <div class="user-name-and-follow">
-        <h3>Munțoman: <%= @user.user_name %></h3>
-      </div>
 
-<div class="biografie">
+        <h3>Munțoman: <%= @user.user_name %></h3>
+
+
+
 <h3>Biografie:</h3>
         <%= @user.bio %>
         <hr>
         <br>
-      </div>
 
-      <div class="user-statistics">
+
         <p>Articolele munțomanului:<br>
           <%= pluralize @user.posts.count, 'post' %> </p>
-          <div class="title_wrapper">
+
         <% @posts.each do |post| %>
         <h5 id="post_title"><a><%= link_to post.title, post %></a></h5>
-      </div>
-      </div>
-</div>
-</div>
-</div>
-</section>
-</div>
 <% end %>
+</div>
+
+
 <%= yield %>
 </body>
 </html>
