@@ -5,6 +5,7 @@ gem 'puma'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 gem 'activesupport', '4.2.6'
+gem 'trix', '~> 0.9.10'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 gem 'acts_as_votable', '~> 0.10.0'

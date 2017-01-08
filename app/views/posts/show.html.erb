@@ -90,7 +90,7 @@
               </div>
               <br>
               <div id="content">
-                <%= markdown @post.content %>
+                <%= markdown @post.content.html_safe %>
               </div>
               <br>
               <br>
